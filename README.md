@@ -205,39 +205,15 @@ editor.commit();
 ##### 2) Install Source: 
 The Install source needs to be passed to our SDK. This is used to measure the Ad channels (especially InOrganic sources) performance. Information can be passed in two ways:
 
-###### a. Via 3rd party platform:
+######  Via 3rd party mobile attriibution platform such as MAT or AppsFlyer:
 If you use any third party attribution platform and supports data extraction via API, then send us the API keys and we will directly extract the information from there. Pls check with your product/marketing manager for details on 3rd party platform.
 
-###### b. Via the App:
-In case you do not use any 3rd party platform or the platform doesn’t support any API then pass the data to our SDK via our event capturing feature This information has to be passed only once in the lifetime of the app during installation and not everytime.
-Help code snippet below.
-
-```
-SharedPreferences sharedPreferences = getSharedPreferences("UNINSTALL", Context.MODE_PRIVATE);
-boolean isFirstSourceData = sharedPreferences.getBoolean("isFirstSourceData", true);
-if (isFirstSourceData) {
-    try {
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("SOURCEDATA", install_source);  //provided by the app-store
-        jsonObject.put("SOURCEDATA", null); // via your app.
-        new NotiphiEventReceiver(jsonObject, context);
-    } catch (JSONException e) {
-        e.printStackTrace();
-    }            
-}       
-Editor editor = sharedPreferences.edit();
-editor.putBoolean("isFirstSourceData", false);
-editor.commit();
-```
 
 ##### 3) App Events:
-All app events have to be passed to our SDK. Information can be passed in two ways:
+All app events should be passed to our SDK for analysis and insights.
 
-###### a. Via 3rd party platform:
-If you use any third party analytics platform and supports data extraction via API, then send us the API keys and we will directly extract the information from there. Pls check with your product/marketing manager for details on 3rd party platform.
-
-###### b. Via the App:
-In case you do not use any 3rd party platform or the platform doesn’t support any API then pass the data to our SDK via our event capturing feature.
+######  Via the App:
+You do not use any 3rd party platform or the platform doesn’t support any API then pass the data to our SDK via our event capturing feature.
 Help code snippet below.
 
 ```
