@@ -50,8 +50,8 @@ Go to your project's root folder and open res folder. Then open values folder. H
 The app_token and app_secret is provided by us on registration of your app with us. As of now there is no online process and you need to contact us at dev-support@notiphi.com to get these.
 
 ```
-<string name="Uninstall_app_token">TOKEN_GIVEN_BY_UNINSTALL_SEPARATELY</string>
-<string name="Uninstall_app_secret">APP_SECRET_GIVEN_BY_UNINSTALL_SEPARATELY</string>
+<string name="notiphi_app_token">TOKEN_GIVEN_BY_UNINSTALL_SEPARATELY</string>
+<string name="notiphi_app_secret">APP_SECRET_GIVEN_BY_UNINSTALL_SEPARATELY</string>
 ```
 
 If you are already sending your own push notifications then slight more configuration is required. Please add the following line to string.xml file of your project
